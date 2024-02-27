@@ -14,8 +14,8 @@
 </script>
 
 <template>
-  <!-- <a-scene> -->
-  <a-scene stats fog="type: linear; color: #005c96; near: 1; far: 50" background="color: #005c96">
+  <a-scene>
+  <!-- <a-scene stats fog="type: linear; color: #005c96; near: 1; far: 50" background="color: #005c96"> -->
 
     <a-assets @loaded="allAssetsLoaded = true">
       <a-asset-item id="sand" src="assets/sand.glb"></a-asset-item>
@@ -31,6 +31,7 @@
     <template v-if="allAssetsLoaded">
       <Desert />
       <TheMainRoom />
+      
       
     </template>
     <TheCameraRig position="-0.8 0 3.8"/>
