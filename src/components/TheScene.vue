@@ -24,6 +24,7 @@
       <a-asset-item id="mexicain" src="assets/mexican_outlaw.glb"></a-asset-item>
       <a-asset-item id="cardboard" src="assets/cardboard.glb"></a-asset-item>
       <a-asset-item id="boutton" src="assets/a_big_red_button.glb"></a-asset-item>
+      <a-asset-item id="heart" src="assets/heart_in_love.glb"></a-asset-item>
     </a-assets>
 
     <!-- <a-entity light="type: ambient; color: #FFF; intensity: 0.1"></a-entity>

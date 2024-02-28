@@ -8,11 +8,14 @@ AFRAME.registerComponent('start-game', {
 
             const camera = document.querySelector('#camera-rig');
             const mainroom = document.querySelector('#mainroom');
-            const boite = document.querySelector('#carton');
+            const toproom = document.querySelector('#toproom');
             const boiteSol = document.querySelector('#cartonSol');
             const banditCentre = document.querySelector('#banditCentre');
             const banditGauche = document.querySelector('#banditGauche');
             const banditDroite = document.querySelector('#banditDroite');
+            const coeur1 = document.querySelector('#heart1');
+            const coeur2 = document.querySelector('#heart2');
+            const coeur3 = document.querySelector('#heart3');
 
             //watch life if 0 =< end game
             // watch((vies, (value) => {
@@ -21,18 +24,23 @@ AFRAME.registerComponent('start-game', {
             //     }
             // }));
 
+            function revealAllHearts (x,y,z) {
+                x.setAttribute('visible', 'true');
+                y.setAttribute('visible', 'true');
+                z.setAttribute('visible', 'true');
+            }
 
             function animateOpen() {
-                var boiteOuvre = boite.object3D.position.y + 10;
+                var boiteOuvre = toproom.object3D.position.y + 10;
                 var solOuvre = boiteSol.object3D.position.y - 5;
-                boite.setAttribute('animation', `property: position; to: 5.508 ${boiteOuvre} -2.331; dur: 1000; easing: linear; loop: false`);
+                toproom.setAttribute('animation', `property: position; to: 0 ${boiteOuvre} 0; dur: 1000; easing: linear; loop: false`);
                 boiteSol.setAttribute('animation', `property: position; to: 0 ${solOuvre} 4.5; dur: 1000; easing: linear; loop: false`);
             };
 
             function animateClose() {
-                var boiteOuvre = boite.object3D.position.y - 10;
+                var boiteOuvre = toproom.object3D.position.y - 10;
                 var solOuvre = boiteSol.object3D.position.y + 5;
-                boite.setAttribute('animation', `property: position; to: 5.508 ${boiteOuvre} -2.331; dur: 1000; easing: linear; loop: false`);
+                toproom.setAttribute('animation', `property: position; to: 0 ${boiteOuvre} 0; dur: 1000; easing: linear; loop: false`);
                 boiteSol.setAttribute('animation', `property: position; to: 0 ${solOuvre} 4.5; dur: 1000; easing: linear; loop: false`);
             };
 
@@ -41,6 +49,8 @@ AFRAME.registerComponent('start-game', {
             }
 
             this.el.addEventListener('click', ()=>{
+                revealAllHearts(coeur1, coeur2, coeur3);
+
                 var boutonDescends = this.el.object3D.position.y -5;
                 this.el.setAttribute('animation', `property: position; to: 0 ${boutonDescends} 0; dur: 3000; easing: linear; loop: false`);
                 vies.value = 3;
@@ -95,7 +105,14 @@ AFRAME.registerComponent('start-game', {
                             } else {
                                 vies.value -= 1;
                             }
-                            console.log(vies.value);
+
+                            if (vies.value == 2) {
+                                coeur3.setAttribute('visible', 'false');
+                            } else if (vies.value == 1) {
+                                coeur2.setAttribute('visible', 'false');
+                            } else if (vies.value == 0) {
+                                coeur1.setAttribute('visible', 'false');
+                            }
                         };                        
 
                         //retire tous les éléments qui possèdent la classe bandit
@@ -125,7 +142,7 @@ AFRAME.registerComponent('start-game', {
                         // }
                         // setTimeout(animateClose, 13000);
                     }
-                } else if (vies.value = 0) {
+                } else if (vies.value == 0) {
                     var boutonMonte = this.el.object3D.position.y +5;
                 this.el.setAttribute('animation', `property: position; to: 0 ${boutonMonte} 0; dur: 3000; easing: linear; loop: false`);
                 }

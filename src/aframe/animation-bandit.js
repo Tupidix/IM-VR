@@ -12,6 +12,4 @@ schema: {
             console.log(ennemies.value);
         });
     },
-  
-  
   });
