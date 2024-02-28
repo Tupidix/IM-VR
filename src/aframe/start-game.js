@@ -1,4 +1,4 @@
-import { vies } from '../store/game.js';
+import { vies, ennemies, gameCleared, miniJeux } from '../store/game.js';
 
 AFRAME.registerComponent('start-game', {
     schema: {
@@ -13,8 +13,6 @@ AFRAME.registerComponent('start-game', {
             const banditCentre = document.querySelector('#banditCentre');
             const banditGauche = document.querySelector('#banditGauche');
             const banditDroite = document.querySelector('#banditDroite');
-            var miniJeux = 0;
-            var gameCleared = false;
 
             //watch life if 0 =< end game
             // watch((vies, (value) => {
@@ -28,7 +26,6 @@ AFRAME.registerComponent('start-game', {
                 var boiteOuvre = boite.object3D.position.y + 10;
                 var solOuvre = boiteSol.object3D.position.y - 5;
                 boite.setAttribute('animation', `property: position; to: 5.508 ${boiteOuvre} -2.331; dur: 1000; easing: linear; loop: false`);
-                console.log(boite.outerHTML);
                 boiteSol.setAttribute('animation', `property: position; to: 0 ${solOuvre} 4.5; dur: 1000; easing: linear; loop: false`);
             };
 
@@ -47,12 +44,12 @@ AFRAME.registerComponent('start-game', {
                 var boutonDescends = this.el.object3D.position.y -5;
                 this.el.setAttribute('animation', `property: position; to: 0 ${boutonDescends} 0; dur: 3000; easing: linear; loop: false`);
                 vies.value = 3;
-                if (vies.value> 0) {
-                    gameCleared = false;
-                    miniJeux = 1;
+                if (vies.value > 0) {
+                    gameCleared.value = false;
+                    miniJeux.value = 1;
 
-                        if (miniJeux == 1) {
-                        var ennemis = 6;
+                        if (miniJeux.value == 1) {
+                        ennemies.value =6;
                         //set camera y position with object3d
                         camera.object3D.position.y = 11;
                         mainroom.object3D.position.y = 11;
@@ -66,64 +63,52 @@ AFRAME.registerComponent('start-game', {
                         let tabBanditGauche = [];
                         let tabBanditDroite = [];
 
-                        //prend au hasard 2 valeurs de banditposx et les push dans banditselectionnes
-                        for (let i = 0; i < 2; i++) {
-                            let bandit = banditPosXCopieFace.splice(Math.floor(Math.random() * banditPosXCopieFace.length), 1);
-                            banditFace.push(bandit);
-                        }
+                        //selectionne 2 bandits par ponts et les affiches
+                        function afficheBandit(x, y, z) {
+                            for (let i = 0; i < 2; i++) {
+                                let bandit = x.splice(Math.floor(Math.random() * x.length), 1);
+                                y.push(bandit);
+                            }
+                            console.log(y);
 
-                        banditFace.forEach(bandit => {
-                            const newBandit = document.createElement('a-entity');
-                            newBandit.setAttribute('position', `${bandit} 12.7 -4`);
-                            newBandit.setAttribute('animation-bandit', '');
-                            newBandit.setAttribute('clickable', '');
-                            newBandit.setAttribute('gltf-model', '#mexicain');
-                            banditCentre.appendChild(newBandit);
-                        });
-
-                        for (let i = 0; i < 2; i++) {
-                            let bandit = banditPosXCopieGauche.splice(Math.floor(Math.random() * banditPosXCopieGauche.length), 1);
-                            tabBanditGauche.push(bandit);
-                        }
-
-                        tabBanditGauche.forEach(bandit => {
-                            const newBandit = document.createElement('a-entity');
-                            newBandit.setAttribute('position', `${bandit} 12.7 -4`);
-                            newBandit.setAttribute('animation-bandit', '');
-                            newBandit.setAttribute('clickable', '');
-                            newBandit.setAttribute('gltf-model', '#mexicain');
-                            banditGauche.appendChild(newBandit);
-                        });
-
-                        for (let i = 0; i < 2; i++) {
-                            let bandit = banditPosXCopieDroite.splice(Math.floor(Math.random() * banditPosXCopieDroite.length), 1);
-                            tabBanditDroite.push(bandit);
-                        }
-
-                        tabBanditDroite.forEach(bandit => {
-                            const newBandit = document.createElement('a-entity');
-                            newBandit.setAttribute('position', `${bandit} 12.7 -4`);
-                            newBandit.setAttribute('animation-bandit', '');
-                            newBandit.setAttribute('clickable', '');
-                            newBandit.setAttribute('gltf-model', '#mexicain');
-                            banditDroite.appendChild(newBandit);
-                        });
-
-                        console.log(banditFace);
-                        console.log(banditGauche);
-                        console.log(banditDroite);
-                        
-
+                            y.forEach(bandit => {
+                                const newBandit = document.createElement('a-entity');
+                                newBandit.setAttribute('position', `${bandit} 12.7 -4`);
+                                newBandit.setAttribute('animation-bandit', '');
+                                newBandit.setAttribute('class','bandit');
+                                newBandit.setAttribute('clickable', '');
+                                newBandit.setAttribute('gltf-model', '#mexicain');
+                                z.appendChild(newBandit);
+                            });
+                        };
+                    
+                        afficheBandit(banditPosXCopieFace, banditFace, banditCentre);
+                        afficheBandit(banditPosXCopieGauche, tabBanditGauche, banditGauche);
+                        afficheBandit(banditPosXCopieDroite, tabBanditDroite, banditDroite);
 
                         setTimeout(animateOpen, 5000);
-                        setTimeout(animateClose, 13000);
-                        if (ennemis = 0) {
-                            gameCleared = true;
-                        } else {
-                            vies.value -= 1;
-                        }
-                        console.log(vies.value);
-                    } else if (miniJeux == 2) {
+                        setTimeout(animateClose, 15000);
+
+                        function verificationJeu() {
+                            if (ennemies.value == 0) {
+                                gameCleared.value = true;
+                            } else {
+                                vies.value -= 1;
+                            }
+                            console.log(vies.value);
+                        };                        
+
+                        //retire tous les éléments qui possèdent la classe bandit
+                        function retireBandit(){
+                            const bandits = document.querySelectorAll('.bandit');
+                            bandits.forEach(bandit => {
+                                bandit.parentNode.removeChild(bandit);
+                            });
+                        };
+                        setTimeout(retireBandit, 15000);
+                        setTimeout(verificationJeu,16000);
+
+                    } else if (miniJeux.value == 2) {
                         //code minijeux 2
 
                         // var ennemis = 6;
@@ -146,6 +131,4 @@ AFRAME.registerComponent('start-game', {
                 }
             });
         },
-      
-      
       });
