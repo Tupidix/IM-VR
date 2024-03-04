@@ -1,4 +1,4 @@
-import { vies, ennemies, gameCleared, miniJeux, score } from '../store/game.js';
+import { vies, ennemies, gameCleared, miniJeux, score, numero1, numero2, numero3} from '../store/game.js';
 
 AFRAME.registerComponent('start-game', {
     schema: {
@@ -18,6 +18,9 @@ AFRAME.registerComponent('start-game', {
             const coeur3 = document.querySelector('#heart3');
             const boutton = this.el;
             const scoreAffiche = document.querySelector('#score');
+            const top1 = document.querySelector('#top1');
+            const top2 = document.querySelector('#top2');
+            const top3 = document.querySelector('#top3');
 
             this.el.addEventListener('game-next', () => {
                 console.log('game-next');
@@ -53,6 +56,28 @@ AFRAME.registerComponent('start-game', {
 
             function retourneUnOuDeux() {
                 return Math.floor(Math.random() * 2) + 1;
+            }
+
+            function enregistreScore() {
+                if (score.value >= numero1.value) {
+                    numero3.value = numero2.value;
+                    numero2.value = numero1.value;
+                    numero1.value = score.value;
+                    top3.setAttribute('text', `value: ${numero3.value};`);
+                    top2.setAttribute('text', `value: ${numero2.value};`);
+                    top1.setAttribute('text', `value: ${numero1.value};`);
+                    scoreAffiche.setAttribute('text', `value: ${score.value}; color: #FFD700`);
+                } else if (score.value >= numero2.value && score.value < numero1.value) {
+                    numero3.value = numero2.value;
+                    numero2.value = score.value;
+                    top3.setAttribute('text', `value: ${numero3.value};`);
+                    top2.setAttribute('text', `value: ${numero2.value};`);
+                    scoreAffiche.setAttribute('text', `value: ${score.value}; color: #C0C0C0`);
+                } else if (score.value >= numero3.value && score.value < numero2.value) {
+                    numero3.value = score.value;
+                    top3.setAttribute('text', `value: ${numero3.value};`);
+                    scoreAffiche.setAttribute('text', `value: ${score.value}; color: #b08d57`);
+                }
             }
 
             function lanceMiniJeu() {
@@ -126,6 +151,7 @@ AFRAME.registerComponent('start-game', {
                             var boutonMonte = boutton.object3D.position.y + 2;
                             boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonMonte} 5; dur: 2000; easing: linear; loop: false`);
                             boutton.setAttribute('clickable');
+                            enregistreScore();
                         }
                     };                        
 
