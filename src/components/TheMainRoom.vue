@@ -9,6 +9,7 @@ import '../aframe/start-game.js';
     <a-entity id="toproom">
       <a-entity position="5.508 18.3 -2.331" rotation="1.862 11.622 154.967" id="carton" gltf-model="#cardboard" scale="10 10 10"></a-entity>
       <!-- scores -->
+      <a-entity text="value: Score; align: center;" position="-0.530 5.5 2.151" scale="15 15 15" ></a-entity>
       <a-entity text="value: 0; align: center;" id="score" position="-0.530 3 2.151" scale="100 100 100" ></a-entity>
       <a-entity text="value: Top Scores; align: center;" position="-3.2 4 5.2" scale="15 15 15" rotation="0 90 0"></a-entity>
       <a-entity position="0 0 0.3">

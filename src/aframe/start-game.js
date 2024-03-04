@@ -177,7 +177,7 @@ AFRAME.registerComponent('start-game', {
                 boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonDescends} 5; dur: 2000; easing: linear; loop: false`);
                 vies.value = 3;
                 score.value = 0;
-                scoreAffiche.setAttribute('text', `value: ${score.value};`);
+                scoreAffiche.setAttribute('text', `value: ${score.value}; color: white;`);
                 gameCleared.value = false;
                 lanceMiniJeu();
             });
