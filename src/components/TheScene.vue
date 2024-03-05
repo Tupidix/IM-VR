@@ -37,7 +37,7 @@
       <TheMainRoom />
       <Desert />
       <a-entity bind-position="target: #hand-right;" bind-rotation="target: #hand-right; convertToLocal: true;" >
-        <a-entity gltf-model="#gun" position="0 0 0" rotation="0 -90 0" scale="0.015 0.015 0.015" >
+        <a-entity gltf-model="#gun" position="-0.045 -0.045 0" rotation="0 270 70" scale="0.015 0.015 0.015" >
         </a-entity>
       </a-entity>
     </template>
