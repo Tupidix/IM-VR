@@ -22,18 +22,24 @@ AFRAME.registerComponent('start-game', {
             const top2 = document.querySelector('#top2');
             const top3 = document.querySelector('#top3');
             const musiqueDesert = document.querySelector('#musiqueDesert');
-
-            this.el.addEventListener('game-next', () => {
-                console.log('game-next');
-                // lanceMiniJeu();
-            });
-
-            this.el.addEventListener('game-over', () => {
-                console.log('game-over');  
-                // var boutonMonte = boutton.object3D.position.y + 2;
-                //             boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonMonte} 5; dur: 2000; easing: linear; loop: false`);
-                //             boutton.setAttribute('clickable');      
-            });
+            const minuteurEl = document.querySelector('#minuteur');
+            
+                // Fonction pour démarrer le minuteur
+                function demarrerMinuteur() {
+                    var tempsRestant = 10; // 10 secondes
+                    minuteurEl.setAttribute('text', 'value', tempsRestant.toString());
+                    var intervalId = setInterval(function() {
+                      if (tempsRestant > 0) {
+                        tempsRestant--;
+                        // Mise à jour de l'entité texte avec le temps restant
+                        minuteurEl.setAttribute('text', 'value', tempsRestant.toString());
+                      } else {
+                        clearInterval(intervalId); // Arrête le minuteur à 0
+                        // Optionnel : afficher un message ou déclencher un événement
+                        minuteurEl.setAttribute('text', 'value', "0");
+                      }
+                    }, 1000);
+                  }
 
             function revealAllHearts (x,y,z) {
                 x.setAttribute('visible', 'true');
@@ -123,6 +129,8 @@ AFRAME.registerComponent('start-game', {
 
                     setTimeout(animateOpen, 5000);
                     setTimeout(() => musiqueDesert.emit('play-sound-desert'), 5000);
+                    setTimeout(demarrerMinuteur, 5000);
+                    
                   
                     setTimeout(animateClose, 15000);
                     setTimeout(() => musiqueDesert.components.sound.stopSound(), 15000);
@@ -148,10 +156,8 @@ AFRAME.registerComponent('start-game', {
                         }
 
                         if (vies.value > 0) {
-                            // defineEmits(this.el, 'game-next');
                             lanceMiniJeu();
                         } else {
-                            // defineEmits(this.el, 'game-over');
                             var boutonMonte = boutton.object3D.position.y + 2;
                             boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonMonte} 5; dur: 2000; easing: linear; loop: false`);
                             boutton.setAttribute('clickable');

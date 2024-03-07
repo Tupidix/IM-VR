@@ -28,6 +28,7 @@
       <a-asset-item id="boutton" src="assets/a_big_red_button.glb"></a-asset-item>
       <a-asset-item id="heart" src="assets/love_low_poly.glb"></a-asset-item>
       <a-asset-item id="gun" src="assets/sci-fi_pistol.glb"></a-asset-item>
+      <a-asset-item id="sign" src="assets/wooden_sign.glb"></a-asset-item>
       <a-asset-item id="musicDesert" response-type="arraybuffer" src="assets/mexicancowboys.mp3" autoplay="false"></a-asset-item>
       <a-asset-item id="pain" response-type="arraybuffer" src="assets/pain1.mp3" autoplay="false"></a-asset-item>
       <a-asset-item id="gunshot" response-type="arraybuffer" src="assets/gunshot.mp3" autoplay="false"></a-asset-item>
