@@ -22,9 +22,9 @@ import '../aframe/start-game.js';
     </a-entity>
 
         <a-entity id="coeurs" position="-0.2 1.5 0">
-          <a-entity gltf-model="#heart" id="heart2" class="heart" scale=".006 .006 .006" position="0 2 3" visible="false"></a-entity>
-          <a-entity gltf-model="#heart" id="heart1" class="heart" scale=".006 .006 .006" position="-2 2 3" visible="false"></a-entity>
-          <a-entity gltf-model="#heart" id="heart3" class="heart" scale=".006 .006 .006" position="2 2 3" visible="false"></a-entity>
+          <a-entity gltf-model="#heart" id="heart2" class="heart" scale=".015 .015 .015" position="0 2 3" visible="false"></a-entity>
+          <a-entity gltf-model="#heart" id="heart1" class="heart" scale=".015 .015 .015" position="-2 2 3" visible="false"></a-entity>
+          <a-entity gltf-model="#heart" id="heart3" class="heart" scale=".015 .015 .015" position="2 2 3" visible="false"></a-entity>
         </a-entity>
     </a-entity>
 

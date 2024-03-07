@@ -54,7 +54,7 @@
         id="hand-right"
         hand-controls="hand: right"
         laser-controls="hand: right"
-        raycaster="far: 400; objects: [clickable]; showLine: true; direction: 0 -2 -1"
+        raycaster="far: 400; objects: [clickable]; showLine: false; direction: 0 -2 -1"
         physx-grab
       >
         <a-sphere id="hand-right-collider"

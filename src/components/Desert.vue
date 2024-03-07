@@ -3,6 +3,9 @@
 </script>
 
 <template>
+      <a-entity id="shot" sound="src: #gunshot; volume: 1; positional: false; on: play-sound-pain"></a-entity>
+      <a-entity id="douleur" sound="src: #pain; volume: 1; positional: false; on: play-sound-pain"></a-entity>
+      <a-entity id="musiqueDesert" sound="src: #musicDesert; volume: 1; positional: false; on: play-sound-desert"></a-entity>
       <!-- Sable -->
       <a-entity position="0 10 0" gltf-model="#sand" scale="100 3 100" ></a-entity>
       <!-- Ponts -->

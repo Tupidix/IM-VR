@@ -21,6 +21,7 @@ AFRAME.registerComponent('start-game', {
             const top1 = document.querySelector('#top1');
             const top2 = document.querySelector('#top2');
             const top3 = document.querySelector('#top3');
+            const musiqueDesert = document.querySelector('#musiqueDesert');
 
             this.el.addEventListener('game-next', () => {
                 console.log('game-next');
@@ -121,7 +122,10 @@ AFRAME.registerComponent('start-game', {
                     afficheBandit(banditPosXCopieDroite, tabBanditDroite, banditDroite);
 
                     setTimeout(animateOpen, 5000);
+                    setTimeout(() => musiqueDesert.emit('play-sound-desert'), 5000);
+                  
                     setTimeout(animateClose, 15000);
+                    setTimeout(() => musiqueDesert.components.sound.stopSound(), 15000);
 
                     function verificationJeu() {
                         if (ennemies.value == 0) {
