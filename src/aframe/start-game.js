@@ -23,11 +23,13 @@ AFRAME.registerComponent('start-game', {
             const top3 = document.querySelector('#top3');
             const musiqueDesert = document.querySelector('#musiqueDesert');
             const minuteurEl = document.querySelector('#minuteur');
+            const stop = 15000;
             
                 // Fonction pour démarrer le minuteur
                 function demarrerMinuteur() {
                     var retireTemps = 20 * score.value;
                     var tempsRestant = 10000 - retireTemps;
+                    stop = tempsRestant + 5000;
                     var intervalId = setInterval(function() {
                       if (tempsRestant > 0) {
                         tempsRestant -= 10; // Décrémenter de 10 millisecondes
@@ -139,8 +141,8 @@ AFRAME.registerComponent('start-game', {
                     setTimeout(demarrerMinuteur, 5000);
                     
                   
-                    setTimeout(animateClose, 15000);
-                    setTimeout(() => musiqueDesert.components.sound.stopSound(), 15000);
+                    setTimeout(animateClose, stop);
+                    setTimeout(() => musiqueDesert.components.sound.stopSound(), stop);
 
                     function verificationJeu() {
                         if (ennemies.value == 0) {
