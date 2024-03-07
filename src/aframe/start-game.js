@@ -26,19 +26,26 @@ AFRAME.registerComponent('start-game', {
             
                 // Fonction pour démarrer le minuteur
                 function demarrerMinuteur() {
-                    var tempsRestant = 10; // 10 secondes
-                    minuteurEl.setAttribute('text', 'value', tempsRestant.toString());
+                    var retireTemps = 20 * score.value;
+                    var tempsRestant = 10000 - retireTemps;
                     var intervalId = setInterval(function() {
                       if (tempsRestant > 0) {
-                        tempsRestant--;
+                        tempsRestant -= 10; // Décrémenter de 10 millisecondes
+                        var secondes = Math.floor((tempsRestant / 1000) % 60); // Calculer les secondes
+                        var millisecondes = tempsRestant % 1000 / 10; // Calculer les millisecondes
+              
+                        // Formatage pour toujours afficher deux chiffres
+                        secondes = String(secondes).padStart(2, '0');
+                        millisecondes = String(millisecondes).padStart(2, '0');
+              
                         // Mise à jour de l'entité texte avec le temps restant
-                        minuteurEl.setAttribute('text', 'value', tempsRestant.toString());
+                        minuteurEl.setAttribute('text', 'value', `${secondes}:${millisecondes}`);
                       } else {
                         clearInterval(intervalId); // Arrête le minuteur à 0
                         // Optionnel : afficher un message ou déclencher un événement
                         minuteurEl.setAttribute('text', 'value', "0");
                       }
-                    }, 1000);
+                    }, 10); // Mettre à jour toutes les 10 millisecondes
                   }
 
             function revealAllHearts (x,y,z) {

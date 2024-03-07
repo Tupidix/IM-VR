@@ -12,7 +12,7 @@
       <!-- panneau -->
       <a-entity position="0 12 -2.5" gltf-model="#sign" scale="1.5 1.5 1.5" id="panneau"></a-entity>
       <!-- chrono -->
-      <a-entity position="0 12.45 -2.3" text="value: 10; color: red; align: center;" scale="10 10 10" id="minuteur"></a-entity>
+      <a-entity position="0 12.45 -2.3" text="value: 10:00; color: red; align: center;" scale="10 10 10" id="minuteur"></a-entity>
       <!-- Ponts -->
       <a-entity position="8.698 11.700 -4.126" rotation="0 46.979 0" gltf-model="#bridge" scale=".01 .01 .01"></a-entity>
       <a-entity position="-14.913 11.700 2.562" rotation="0 136.979 0" gltf-model="#bridge" scale=".01 .01 .01"></a-entity>
