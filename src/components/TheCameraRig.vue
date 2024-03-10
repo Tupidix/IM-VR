@@ -36,12 +36,6 @@
       <a-entity
         id="hand-left"
         hand-controls="hand: left"
-        blink-controls="
-          cameraRig: #camera-rig;
-          teleportOrigin: #head;
-          collisionEntities: [data-role='nav-mesh'];
-          snapTurn: false;
-        "
         physx-grab
       >
         <a-sphere id="hand-left-collider"
