@@ -23,18 +23,18 @@ AFRAME.registerComponent('start-game', {
             const top3 = document.querySelector('#top3');
             const musiqueDesert = document.querySelector('#musiqueDesert');
             const minuteurEl = document.querySelector('#minuteur');
-            const stop = 15000;
+            let stop = 15000;
             
                 // Fonction pour démarrer le minuteur
                 function demarrerMinuteur() {
-                    var retireTemps = 20 * score.value;
-                    var tempsRestant = 10000 - retireTemps;
+                    let retireTemps = 20 * score.value;
+                    let tempsRestant = 10000 - retireTemps;
                     stop = tempsRestant + 5000;
-                    var intervalId = setInterval(function() {
+                    let intervalId = setInterval(function() {
                       if (tempsRestant > 0) {
                         tempsRestant -= 10; // Décrémenter de 10 millisecondes
-                        var secondes = Math.floor((tempsRestant / 1000) % 60); // Calculer les secondes
-                        var millisecondes = tempsRestant % 1000 / 10; // Calculer les millisecondes
+                        let secondes = Math.floor((tempsRestant / 1000) % 60); // Calculer les secondes
+                        let millisecondes = tempsRestant % 1000 / 10; // Calculer les millisecondes
               
                         // Formatage pour toujours afficher deux chiffres
                         secondes = String(secondes).padStart(2, '0');
@@ -57,15 +57,15 @@ AFRAME.registerComponent('start-game', {
             }
 
             function animateOpen() {
-                var boiteOuvre = toproom.object3D.position.y + 10;
-                var solOuvre = boiteSol.object3D.position.y - 5;
+                let boiteOuvre = toproom.object3D.position.y + 10;
+                let solOuvre = boiteSol.object3D.position.y - 5;
                 toproom.setAttribute('animation', `property: position; to: 0 ${boiteOuvre} 0; dur: 500; easing: linear; loop: false`);
                 boiteSol.setAttribute('animation', `property: position; to: 0 ${solOuvre} 4.5; dur: 500; easing: linear; loop: false`);
             };
 
             function animateClose() {
-                var boiteOuvre = toproom.object3D.position.y - 10;
-                var solOuvre = boiteSol.object3D.position.y + 5;
+                let boiteOuvre = toproom.object3D.position.y - 10;
+                let solOuvre = boiteSol.object3D.position.y + 5;
                 toproom.setAttribute('animation', `property: position; to: 0 ${boiteOuvre} 0; dur: 500; easing: linear; loop: false`);
                 boiteSol.setAttribute('animation', `property: position; to: 0 ${solOuvre} 4.5; dur: 500; easing: linear; loop: false`);
             };
@@ -143,6 +143,7 @@ AFRAME.registerComponent('start-game', {
                   
                     setTimeout(animateClose, stop);
                     setTimeout(() => musiqueDesert.components.sound.stopSound(), stop);
+                    console.log(stop);
 
                     function verificationJeu() {
                         if (ennemies.value == 0) {
@@ -167,7 +168,7 @@ AFRAME.registerComponent('start-game', {
                         if (vies.value > 0) {
                             lanceMiniJeu();
                         } else {
-                            var boutonMonte = boutton.object3D.position.y + 2;
+                            let boutonMonte = boutton.object3D.position.y + 2;
                             boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonMonte} 5; dur: 2000; easing: linear; loop: false`);
                             boutton.setAttribute('clickable');
                             enregistreScore();
@@ -192,7 +193,7 @@ AFRAME.registerComponent('start-game', {
             this.el.addEventListener('click', ()=>{
                 revealAllHearts(coeur1, coeur2, coeur3);
                 boutton.removeAttribute('clickable');
-                var boutonDescends = boutton.object3D.position.y -2;
+                let boutonDescends = boutton.object3D.position.y -2;
                 boutton.setAttribute('animation', `property: position; to: -0.68 ${boutonDescends} 5; dur: 2000; easing: linear; loop: false`);
                 vies.value = 3;
                 score.value = 0;

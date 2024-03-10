@@ -4,6 +4,7 @@
   import '../aframe/simple-navmesh-constraint.js';
   import '../aframe/blink-controls.js';
   import '../aframe/physx-grab.js';
+  import '../aframe/controller-events.js';
 </script>
 
 <template>
