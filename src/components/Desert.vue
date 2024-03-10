@@ -7,6 +7,15 @@
       <a-entity id="shot" sound="src: #gunshot; volume: 1; positional: false; on: play-sound-shot"></a-entity>
       <a-entity id="douleur" sound="src: #pain; volume: 1; positional: false; on: play-sound-pain"></a-entity>
       <a-entity id="musiqueDesert" sound="src: #musicDesert; volume: 1; positional: false; on: play-sound-desert"></a-entity>
+      <!-- navmesh -->
+      <a-entity
+        geometry="primitive: plane; height: 6; width: 6.2"
+        position="-0.3 11 5.3"
+        rotation="-90 0 0"
+        data-role="nav-mesh"
+        material="color: blue"
+        visible="false">
+      </a-entity>
       <!-- Sable -->
       <a-entity position="0 10 0" gltf-model="#sand" scale="100 3 100" ></a-entity>
       <!-- panneau -->

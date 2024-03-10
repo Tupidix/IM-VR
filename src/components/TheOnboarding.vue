@@ -55,16 +55,59 @@
           </dd>
 
           <dt>
-            <a href="https://sketchfab.com/3d-models/vr-gallery-1ac32ed62fdf424498acc146fad31f7e" target="_blank">VR Gallery</a>
+            <a href="https://sketchfab.com/3d-models/a-big-red-button-78aa2ad55f3c461b84fbb85a530657e2" target="_blank">A Big Red Button</a>
           </dt><dd>
-            by <a href="https://sketchfab.com/mvrc.art" target="_blank">Maxim Mavrichev</a>
+            by <a href="https://sketchfab.com/logan.bauer" target="_blank">click here for more free 3 models (Logan Bauer)</a>
+          under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/cardboard-boxes-713484d8f2284528bbd28ad41e197b24" target="_blank">Cardboard Boxes</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/juancarloscr" target="_blank">JuanCarlos CR</a>
+          under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/love-low-poly-dd3b881a34904991878dc6a5a05aa1f6" target="_blank">Love Low Poly</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/VladislavFehu" target="_blank">VARRRG</a>
+          under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/mexican-outlaw-2270ee74361d4a5f8fab11ce64b8e7d1" target="_blank">Mexican Outlaw</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/JuriK" target="_blank">Juri Knauth</a>
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
           </dd>
 
           <dt>
-            <a href="https://sketchfab.com/3d-models/3d-gallery-for-vr-projects-68f77ed8558c4bd59e0a13e2cc9d1fd1" target="_blank">Physic room model</a>
+            <a href="https://sketchfab.com/3d-models/old-bridge-a8b48f98fc194c3b8c430c711a2ba06d" target="_blank">Old bridge</a>
           </dt><dd>
-            by <a href="https://sketchfab.com/tekuto1s" target="_blank">tekuto1s</a>
+            by <a href="https://sketchfab.com/gunnarcorrea" target="_blank">Gunnar Correa</a>
+            under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/sand-d491e5f026234eaea7b3a36fd48da21b" target="_blank">Sand</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/noortjeschuur" target="_blank">n0stardust
+          </a>
+            under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/sci-fi-pistol-c23394d709d14772adf355da84408edc" target="_blank">Sci-fi pistol</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/eugen_vahrushin" target="_blank">Eugen Vahrushin</a>
+            under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/wooden-sign-256975ecc4a947a79ffe2a0e963e8bbd" target="_blank">🧱Wooden Sign</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/carlossamuelariza" target="_blank">Carlos</a>
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
           </dd>
         </dl>
