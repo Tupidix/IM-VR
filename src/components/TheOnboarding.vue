@@ -37,6 +37,10 @@
             VR Headset – AR/VR walk + right hand to shoot and aim cursor for click
           </li>
         </ul>
+        <h4>The Game</h4>
+        <p>
+          The Box is a game where you must complete various missions more and more quickly in order to increase your score. You will have to figure out yourself how to complete the objectives. To start the game click the big red button.
+        </p>
       </section>
         <dl>
           <dt>
