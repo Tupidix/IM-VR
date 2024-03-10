@@ -53,7 +53,9 @@
           </dt><dd>
             By Ada Rose Cannon under MIT License
           </dd>
-
+          <dt>
+            <i>3D Models</i>
+          </dt>
           <dt>
             <a href="https://sketchfab.com/3d-models/a-big-red-button-78aa2ad55f3c461b84fbb85a530657e2" target="_blank">A Big Red Button</a>
           </dt><dd>
@@ -109,6 +111,26 @@
           </dt><dd>
             by <a href="https://sketchfab.com/carlossamuelariza" target="_blank">Carlos</a>
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+          <dt>
+            <i>Sounds/music</i>
+          </dt>
+          <dt>
+            <a href="https://www.fesliyanstudios.com/royalty-free-music/download/mexican-cowboys/3251" target="_blank">Mexican Cowboys</a>
+          </dt><dd>
+            by Steve Oxen
+          </dd>
+
+          <dt>
+            <a href="https://elements.envato.com/fr/english-warrior-pain-vocal-punch-pain-male-30s-voi-2QBB467" target="_blank">Anglais Guerrier Douleur Vocal Punch Douleur Voix</a>
+          </dt><dd>
+            by ESMTeam
+          </dd>
+
+          <dt>
+            <a href="https://mixkit.co/free-sound-effects/gun/" target="_blank">Game gun shot</a>
+          </dt><dd>
+            by mixkit
           </dd>
         </dl>
       </div>
