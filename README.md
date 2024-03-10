@@ -48,4 +48,5 @@ npm run dev-expose
 
 # Bugs // not working
 I can't take away the Raycaster in VR mode.
+
 Timer always start at 10 (it shouldn't).
