@@ -2,8 +2,6 @@
   import '../aframe/disable-in-vr.js';
   import '../aframe/hide-in-vr.js';
   import '../aframe/simple-navmesh-constraint.js';
-  import '../aframe/blink-controls.js';
-  import '../aframe/physx-grab.js';
   import '../aframe/controller-events.js';
 </script>
 
@@ -36,13 +34,7 @@
       <a-entity
         id="hand-left"
         hand-controls="hand: left"
-        physx-grab
       >
-        <a-sphere id="hand-left-collider"
-          radius="0.02"
-          visible="false"
-          physx-body="type: kinematic; emitCollisionEvents: true">
-        </a-sphere>
       </a-entity>
 
       <a-entity
@@ -51,13 +43,7 @@
         laser-controls="hand: right"
         raycaster="far: 400; objects: [clickable]; showLine: false; direction: 0 -2 -1;"
         controller-events
-        physx-grab
       >
-        <a-sphere id="hand-right-collider"
-          radius="0.02"
-          visible="false"
-          physx-body="type: kinematic; emitCollisionEvents: true">
-        </a-sphere>
       </a-entity>
 
   </a-entity>

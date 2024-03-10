@@ -27,15 +27,14 @@
         <ul>
           <li>
             Desktop – Keyboard for move (WASD or Arrows keys) + Mouse for look
-            control (Drag and drop)
+            control and click for shoot
           </li>
           <li>
             Mobile – 1x Finger touch to go forward + 2x Fingers touch to go
             backward + Gaze cursor for click
           </li>
           <li>
-            VR Headset – AR/VR walk + Teleport (Grip for grab and laser for
-            click) + Gaze cursor for click
+            VR Headset – AR/VR walk + right hand to shoot and aim cursor for click
           </li>
         </ul>
       </section>
@@ -47,18 +46,6 @@
             <a href="https://github.com/c-frame/aframe-extras" target="_blank">aframe-extras controls and animation-mixer</a>
           </dt><dd>
             <a href="https://github.com/c-frame/aframe-extras/blob/master/LICENSE" target="_blank">MIT License</a>
-          </dd>
-
-          <dt>
-            <a href="https://github.com/c-frame/physx" target="_blank">aframe physx</a>
-          </dt><dd>
-            <a href="https://github.com/c-frame/aframe-extras/blob/master/LICENSE" target="_blank">MIT License</a>
-          </dd>
-
-          <dt>
-            <a href="https://github.com/jure/aframe-blink-controls/" target="_blank">aframe-blink-controls</a>
-          </dt><dd>
-            <a href="https://github.com/jure/aframe-blink-controls/blob/main/LICENSE" target="_blank">MIT License</a>
           </dd>
 
           <dt>
